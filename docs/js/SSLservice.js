@@ -22,16 +22,16 @@ async function initGeoInfo() {
 
   async function showGeoInfo(geoObj) {
     for (let key in geoObj) {
-      if (geoObj[key].length !== 0) {
-        geoInfoHtmlUl.insertAdjacentHTML(
-          "beforeend",
-          `<li class="geo-info__li">${key}: <b>${geoObj[key]}</b></li>`
-        );
-      }
+      geoInfoHtmlUl.insertAdjacentHTML(
+        "beforeend",
+        `<li class="geo-info__li">${key}: <b>${geoObj[key]}</b></li>`
+      );
     }
   }
 
   geoObj = await getInfoByUserPublicIp();
+
+  console.log(geoObj);
 
   showGeoInfo(geoObj);
   // initMap(geoObj);
