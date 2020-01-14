@@ -1,8 +1,14 @@
-# OptimizedSassTemplate
+# Html page for WordPress template
+
+## Demo page:
+
+[Check your Public ID](https://oshchenkov.github.io/check-public-id/)
+
+## OptimizedSassTemplate
 
 [Optimized SASS template](https://github.com/Oshchenkov/OptimizedSassTemplate) with gulp. Ready for gitHub /doc demo show.
 
-## For installing you need:
+### For installing you need:
 
 Run in terminal(need to have installed npm)
 
