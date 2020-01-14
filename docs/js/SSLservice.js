@@ -7,12 +7,9 @@ async function initGeoInfo() {
   let geoObj = {};
 
   async function getInfoByUserPublicIp() {
-    const ipInfoRequestURL = new URL("https://json.geoiplookup.io/");
-    ipInfoRequestURL.searchParams.set(
-      "api-key",
-      "bf38e413e44e869ed9686d9e3302d349c89c9ba775e35227bd086722"
+    const ipInfoRequestURL = new URL(
+      "https://json.geoiplookup.io/?api-key=bf38e413e44e869ed9686d9e3302d349c89c9ba775e35227bd086722"
     );
-    console.log(ipInfoRequestURL);
 
     return await fetch(ipInfoRequestURL)
       .then(response => response.json())
@@ -22,7 +19,7 @@ async function initGeoInfo() {
 
   async function showGeoInfo(geoObj) {
     for (let key in geoObj) {
-      if (!(key === "geoplugin_credit" || geoObj[key].length == 0)) {
+      if (geoObj[key].length !== 0) {
         geoInfoHtmlUl.insertAdjacentHTML(
           "beforeend",
           `<li class="geo-info__li">${key}: <b>${geoObj[key]}</b></li>`
