@@ -1,4 +1,4 @@
-# Html page for WordPress template
+# Check you Public ID and some info of it
 
 ## Demo page:
 
