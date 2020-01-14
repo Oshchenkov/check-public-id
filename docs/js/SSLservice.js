@@ -7,11 +7,13 @@ async function initGeoInfo() {
   let geoObj = {};
 
   async function getInfoByUserPublicIp() {
-    const ipInfoRequestURL = new URL("https://json.geoiplookup.io/");
-    ipInfoRequestURL.searchParams.set(
-      "api-key",
-      "bf38e413e44e869ed9686d9e3302d349c89c9ba775e35227bd086722"
+    const ipInfoRequestURL = new URL(
+      "https://json.geoiplookup.io/?api-key=bf38e413e44e869ed9686d9e3302d349c89c9ba775e35227bd086722"
     );
+    // ipInfoRequestURL.searchParams.set(
+    //   "api-key",
+    //   "bf38e413e44e869ed9686d9e3302d349c89c9ba775e35227bd086722"
+    // );
     console.log(ipInfoRequestURL);
 
     return await fetch(ipInfoRequestURL)
@@ -34,7 +36,7 @@ async function initGeoInfo() {
   geoObj = await getInfoByUserPublicIp();
 
   showGeoInfo(geoObj);
-  initMap(geoObj);
+  // initMap(geoObj);
 }
 
 window.addEventListener("load", () => {
